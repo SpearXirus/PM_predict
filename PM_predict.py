@@ -119,10 +119,8 @@ def predict():
     if predict == 1:
         message = "내일 공기가 나쁩니다. 마스크 착용을 권장드립니다."
     return render_template('PM_predict/result.html',
+                           PM10=PM10, PM25=PM25, temp=temperatures[0], humid = humidities[0], win = winds[0],
                            message=message, probablity=probablity * 100)
 
 if __name__ == '__main__':
     app.run(port=8000, threaded=False)
-
-
-
